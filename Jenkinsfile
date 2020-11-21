@@ -13,9 +13,7 @@ pipeline {
             }
         }
         stage('git clone') {
-            steps {
-                sh 'sudo git clone https://github.com/sunpyopark/jenkins.git'
-            }
+            git 'https://github.com/sunpyopark/node-todo-frontend'
         }
         stage('terraform init') {
             steps {
