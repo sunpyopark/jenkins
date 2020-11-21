@@ -14,7 +14,7 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'sudo rm -r *;sudo git clone https://github.com/sunpyopark/jenkins.git'
+                sh 'sudo git clone https://github.com/sunpyopark/jenkins.git'
             }
         }
         stage('terraform init') {
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                sh 'ls ./jenkins; sudo /home/ubuntu/terraform-pipeline/terraform plan ./jenkins'
+                sh 'sudo /var/lib/jenkins/workspace/terraform-pipeline/terraform plan ./jenkins'
             }
         }
         stage('terraform ended') {
