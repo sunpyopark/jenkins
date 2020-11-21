@@ -19,12 +19,12 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh 'sudo /var/lib/jenkins/workspace/terraform-pipeline/terraform init ./jenkins'
+                sh 'sudo /var/lib/jenkins/workspace/terraform-pipeline/terraform init'
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'sudo /var/lib/jenkins/workspace/terraform-pipeline/terraform plan ./jenkins'
+                sh 'sudo /var/lib/jenkins/workspace/terraform-pipeline/terraform plan'
             }
         }
         stage('terraform ended') {
